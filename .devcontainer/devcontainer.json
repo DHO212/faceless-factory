@@ -1,0 +1,19 @@
+{
+  "name": "faceless-factory",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+  "features": {
+    "ghcr.io/devcontainers/features/python:1": { "version": "3.11" },
+    "ghcr.io/devcontainers/features/node:1": { "version": "20" }
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": ["ms-python.python", "dbaeumer.vscode-eslint"]
+    }
+  },
+  "postCreateCommand": "sudo apt-get update && sudo apt-get install -y ffmpeg && pip install -r requirements.txt && npm i -g n8n",
+  "forwardPorts": [5678, 8000],
+  "portsAttributes": {
+    "5678": { "label": "n8n", "onAutoForward": "openPreview" }
+  },
+  "hostRequirements": { "cpus": 2, "memory": "4gb", "storage": "16gb" }
+}

@@ -1,0 +1,11 @@
+output/*.mp4
+output/*.mp3
+output/*.txt
+output/norm_*.mp4
+output/concat.mp4
+output/concat.txt
+output/clip_*.mp4
+.env
+__pycache__/
+node_modules/
+.codespaces/
